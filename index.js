@@ -11,7 +11,7 @@ function distanceFromHqInFeet(blockNumber) {
 }
 
 function distanceTravelledInFeet(start, destination) {
- return Math.abs(distanceFromHqInFeet(start) - distanceFromHqInFeet(destination));
+ return Math.abs(distanceFromHqInFeet(destination) - distanceFromHqInFeet(start));
 }
 
 function calculatesFarePrice(start, destination) {
@@ -19,7 +19,7 @@ function calculatesFarePrice(start, destination) {
  if (totalFeetTravelled > 2500) {
     return 'cannot travel that far';
  }
- if (totalFeetTravelled <= 400) {
+ else if (totalFeetTravelled <= 400) {
     return 0;
  }
  const fare = (totalFeetTravelled - 400) * 0.02;
